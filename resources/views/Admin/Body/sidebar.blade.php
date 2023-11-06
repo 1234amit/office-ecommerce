@@ -26,17 +26,19 @@
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                 data-accordion="false">
-                <li class="nav-item menu-open">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                <li class="nav-item {{ request()->is('admin/category*') ? 'menu-open' : '' }}">
+                    <a href="#" class="nav-link {{ request()->is('admin/category*') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-solid fa-object-group"></i>
                         <p>
                             Category
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
-                    <ul class="nav nav-treeview">
+                    <ul class="nav nav-treeview"
+                        style="{{ request()->is('admin/category*') ? 'display:block; overflow:hidden;' : 'display:none; overflow:hidden;' }} ">
                         <li class="nav-item">
-                            <a href="./index.html" class="nav-link">
+                            <a href="{{ route('addCategoryPage') }}"
+                                class="nav-link {{ request()->is('admin/category/add') ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Add Category</p>
                             </a>
@@ -44,17 +46,19 @@
                     </ul>
                 </li>
 
-                <li class="nav-item menu-open">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                <li class="nav-item {{ request()->is('admin/brand*') ? 'menu-open' : '' }}">
+                    <a href="#" class="nav-link {{ request()->is('admin/brand*') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-folder"></i>
                         <p>
                             Brand
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
-                    <ul class="nav nav-treeview">
+                    <ul class="nav nav-treeview"
+                        style="{{ request()->is('admin/brand*') ? 'display:block; overflow:hidden;' : 'display:none; overflow:hidden;' }} ">
                         <li class="nav-item">
-                            <a href="./index.html" class="nav-link">
+                            <a href="{{ route('addBrandPage') }}"
+                                class="nav-link {{ request()->is('admin/brand/add') ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Add Brand</p>
                             </a>
@@ -62,17 +66,19 @@
                     </ul>
                 </li>
 
-                <li class="nav-item menu-open">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                <li class="nav-item {{ request()->is('admin/product*') ? 'menu-open' : '' }}">
+                    <a href="#" class="nav-link {{ request()->is('admin/product*') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-folder"></i>
                         <p>
                             Product
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
-                    <ul class="nav nav-treeview">
+                    <ul class="nav nav-treeview"
+                        style="{{ request()->is('admin/product*') ? 'display:block; overflow:hidden;' : 'display:none; overflow:hidden;' }}">
                         <li class="nav-item">
-                            <a href="./index.html" class="nav-link">
+                            <a href="{{ route('addProductPage') }}"
+                                class="nav-link {{ request()->is('admin/product/add') ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Add Product</p>
                             </a>
@@ -80,17 +86,19 @@
                     </ul>
                 </li>
 
-                <li class="nav-item menu-open">
-                    <a href="#" class="nav-link">
+                <li class="nav-item {{ request()->is('admin/slider*') ? 'menu-open' : '' }}">
+                    <a href="#" class="nav-link {{ request()->is('admin/slider*') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
                             Slider
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
-                    <ul class="nav nav-treeview">
+                    <ul class="nav nav-treeview"
+                        style="{{ request()->is('admin/slider*') ? 'display:block; overflow:hidden;' : 'display:none; overflow:hidden;' }}">
                         <li class="nav-item">
-                            <a href="./index.html" class="nav-link">
+                            <a href="{{ route('addSlideShowPage') }}"
+                                class="nav-link {{ request()->is('admin/slider/add') ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Add Slider</p>
                             </a>
@@ -99,17 +107,19 @@
                 </li>
 
 
-                <li class="nav-item menu-open">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                <li class="nav-item {{ request()->is('admin/blog*') ? 'menu-open' : '' }}">
+                    <a href="#" class="nav-link {{ request()->is('admin/blog*') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-blog"></i>
                         <p>
                             Blog
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
-                    <ul class="nav nav-treeview">
+                    <ul class="nav nav-treeview"
+                        style="{{ request()->is('admin/blog*') ? 'display:block; overflow:hidden;' : 'display:none; overflow:hidden;' }}">
                         <li class="nav-item">
-                            <a href="./index.html" class="nav-link">
+                            <a href="{{ route('addBlogPage') }}"
+                                class="nav-link {{ request()->is('admin/blog/add') ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Add Blog</p>
                             </a>
