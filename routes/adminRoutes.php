@@ -14,3 +14,5 @@ Route::get('/admin/slider/add', [AdminController::class, 'add_slide_show'])->nam
 Route::post('/add_slide_show_data', [AdminController::class, 'add_slide_show_data'])->name('addSlideShowData');
 Route::get('/admin/blog/add', [AdminController::class, 'add_blog'])->name('addBlogPage');
 Route::post('/add_blog_data', [AdminController::class, 'add_blog_data'])->name('addBlogData');
+Route::get('/admin/contact/view', [AdminController::class, 'view_contactDetails'])->name('viewContactDetails');
+Route::get('/delete-contact/{id}', [AdminController::class, 'deleteContact'])->name('contact.delete');

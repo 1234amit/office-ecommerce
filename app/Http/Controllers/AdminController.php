@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Blog;
 use App\Models\Brand;
 use App\Models\Category;
+use App\Models\Contact;
 use App\Models\Product;
 use App\Models\SlideShow;
 use Auth;
@@ -186,6 +187,20 @@ class AdminController extends Controller
         }
         $blog->save();
         return redirect()->back();
+    }
+
+
+    public function view_contactDetails()
+    {
+        $contacts = Contact::all();
+        return view('Admin.Contact.viewContact_details', compact('contacts'));
+    }
+
+
+    public function deleteContact($id)
+    {
+        $contacts = Contact::find($id)->delete();
+        return redirect()->route('viewContactDetails')->with('message', 'Contact Deleted successfully');
     }
 
     /**

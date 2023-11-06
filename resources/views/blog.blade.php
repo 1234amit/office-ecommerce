@@ -9,7 +9,7 @@
                     @foreach ($blog as $item)
                         <div class="">
                             <div class="blog-card">
-                                <div class="blog-card-img h-[350px]"
+                                <div class="blog-card-img h-[350px] w-96"
                                     style="background-image: url('{{ asset('assets/blog_image/' . $item->image) }}')">
                                 </div>
                                 <div class="blog-info">

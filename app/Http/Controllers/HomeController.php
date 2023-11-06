@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Blog;
+use App\Models\Contact;
 use App\Models\Product;
 use App\Models\ProductReview;
 use App\Models\SlideShow;
+use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
@@ -55,5 +57,29 @@ class HomeController extends Controller
     public function contact()
     {
         return view('contact');
+    }
+
+    public function add_contact(Request $request)
+    {
+        print("amit");
+        //form validation
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required',
+            'message' => 'required',
+        ], [
+            'name.required' => 'name field is required.',
+            'email.required' => 'email field is required.',
+            'message.required' => 'message field is required.',
+        ]);
+
+        // insert data
+        $contact = new Contact();
+        $contact->name = $request->name;
+        $contact->email = $request->email;
+        $contact->message = $request->message;
+        $contact->save();
+
+        return redirect()->back()->with('message', 'Contact added Successfully');
     }
 }

@@ -18,13 +18,14 @@
                         <div class=" bg-serpent">
 
                             <div class="mt-10 p-4">
-                                <form action="">
+                                <form action="{{ route('contact.add') }}" method="POST">
+                                    @csrf
                                     <div class="mb-3">
                                         <h2 class=" text-white text-base">Your Name</h2>
                                         <div class="mt-2">
                                             <input
                                                 class=" border bg-transparent text-white border-white w-full focus:outline-none px-4 py-2 rounded-md"
-                                                type="text">
+                                                type="text" name="name">
                                         </div>
                                     </div>
                                     <div class="mb-3">
@@ -32,21 +33,22 @@
                                         <div class="mt-2">
                                             <input
                                                 class=" border bg-transparent text-white border-white w-full focus:outline-none px-4 py-2 rounded-md"
-                                                type="email">
+                                                type="email" name="email">
                                         </div>
                                     </div>
                                     <div class="mb-3">
                                         <h2 class=" text-white text-base">Your Message</h2>
                                         <div class="mt-2">
-                                            <textarea name="" rows="6"
-                                                class=" border bg-transparent resize-none text-white  border-white w-full focus:outline-none px-4 py-2 rounded-md"></textarea>
+                                            <textarea rows="6"
+                                                class=" border bg-transparent resize-none text-white  border-white w-full focus:outline-none px-4 py-2 rounded-md"
+                                                name="message"></textarea>
                                         </div>
                                     </div>
-                                    <div class="">
-                                        <input
-                                            class=" bg-black text-white px-6  w-full py-2 rounded-md cursor-pointer hover:bg-white hover:text-black"
-                                            type="Submit" value="submit">
-                                    </div>
+
+                                    <input
+                                        class=" bg-black text-white px-6  w-full py-2 rounded-md cursor-pointer hover:bg-white hover:text-black"
+                                        type="submit" value="submit">
+
                                 </form>
                             </div>
                         </div>

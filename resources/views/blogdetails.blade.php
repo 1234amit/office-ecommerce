@@ -11,7 +11,7 @@
     </section>
     {{-- ==============Blog-details-start=========== --}}
     <section>
-        <div class="blog-image" style="background-image: url('{{ asset('assets/blog_image/' . $blog->image) }}')"></div>
+        <div class="blog-image h-50" style="background-image: url('{{ asset('assets/blog_image/' . $blog->image) }}')"></div>
         <div class="container mx-auto">
             <div class="grid grid-cols-12 gap-10 py-10">
                 <div class="col-span-8">

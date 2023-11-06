@@ -1,6 +1,6 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link">
+    <a href="{{ asset('/admin_home') }}" class="brand-link">
         <img src="{{ asset('/') }}admin/dist/img/1.jpg" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
             style="opacity: .8">
         <span class="brand-text font-weight-light">Admin Panel</span>
@@ -122,6 +122,27 @@
                                 class="nav-link {{ request()->is('admin/blog/add') ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Add Blog</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+
+                <li class="nav-item {{ request()->is('admin/contact*') ? 'menu-open' : '' }}">
+                    <a href="#" class="nav-link {{ request()->is('admin/contact*') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-phone"></i>
+                        <p>
+                            Contact
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview"
+                        style="{{ request()->is('admin/contact*') ? 'display:block; overflow:hidden;' : 'display:none; overflow:hidden;' }}">
+                        <li class="nav-item">
+                            <a href="{{ route('viewContactDetails') }}"
+                                class="nav-link {{ request()->is('admin/contact/view') ? 'active' : '' }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>View Contact Details</p>
                             </a>
                         </li>
                     </ul>

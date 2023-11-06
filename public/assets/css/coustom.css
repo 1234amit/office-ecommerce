@@ -328,7 +328,10 @@ nav {
 .blog-image {
     background-size: cover;
     background-position: center center;
-    height: 60vh;
+    height: 90vh;
+    width: 90vh;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 /* ===============Blog-details-end========= */

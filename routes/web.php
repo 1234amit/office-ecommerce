@@ -6,6 +6,7 @@ use App\Http\Controllers\ShopeController;
 use App\Http\Controllers\StripePaymentController;
 use App\Models\Product;
 use App\Models\SlideShow;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -39,6 +40,9 @@ Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::get('/promotion', function () {
     return view('promotion');
 });
+
+// Route::post('/contact/add', [HomeController::class, 'add_contact'])->name('contact.add');
+Route::post('/contact/add', [HomeController::class, 'add_contact'])->name('contact.add');
 
 Route::get('paywithpaypal', [PaypalController::class, 'payWithPaypal'])->name('addmoney.paywithpaypal');
 Route::post('paypal', [PaypalController::class, 'postPaymentWithpaypal'])->name('addmoney.paypal');
