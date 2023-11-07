@@ -203,6 +203,118 @@ class AdminController extends Controller
         return redirect()->route('viewContactDetails')->with('message', 'Contact Deleted successfully');
     }
 
+    // view category controller code start
+    public function viewCategory()
+    {
+        $categorys = Category::all();
+        return view('Admin.Category.viewCategory_details', compact('categorys'));
+    }
+
+    // view category controller code end
+
+    public function deleteCategory($id)
+    {
+        $category = Category::find($id);
+
+        if ($category) {
+            $category->delete();
+            return redirect()->route('viewCategoryDetails')->with('message', 'Category Deleted successfully');
+        } else {
+            return redirect()->route('viewCategoryDetails')->with('error', 'Category not found');
+        }
+    }
+
+
+    // view brand
+    public function viewBrand()
+    {
+        $brands = Brand::all();
+        return view('Admin.Brand.viewBrandDetails', compact('brands'));
+    }
+
+    public function deleteBrand($id)
+    {
+        $brand = Brand::find($id);
+
+        if ($brand) {
+            $brand->delete();
+            return redirect()->route('viewBrandDetails')->with('message', 'Brand Deleted successfully');
+        } else {
+            return redirect()->route('viewBrandDetails')->with('error', 'Brand not found');
+        }
+    }
+
+    // product view page
+    public function viewProduct()
+    {
+        $products = Product::all();
+        return view('Admin.Product.view_product', compact('products'));
+    }
+
+
+    // product delete page
+    public function deleteProduct($id)
+    {
+        $product = Product::find($id);
+
+        if ($product) {
+            $product->delete();
+            return redirect()->route('viewProductPage')->with('message', 'Product Deleted successfully');
+        } else {
+            return redirect()->route('viewProductPage')->with('error', 'Product not found');
+        }
+    }
+
+
+    // slider page view
+    public function viewSliderPage()
+    {
+        $sliders = SlideShow::all();
+        return view('Admin.SlideShow.viewSlideShow', compact('sliders'));
+    }
+
+    public function deleteSlider($id)
+    {
+        $slider = SlideShow::find($id);
+
+        if ($slider) {
+            $slider->delete();
+            return redirect()->route('viewSlidePage')->with('message', 'Slider Deleted successfully');
+        } else {
+            return redirect()->route('viewSlidePage')->with('error', 'Slider not found');
+        }
+    }
+
+
+    // blog page start here
+    public function viewBlogDetailsPage()
+    {
+        $blogs = Blog::all();
+        return view('Admin.Blog.viewBlogDetails', compact('blogs'));
+    }
+
+    public function deleteBlog($id)
+    {
+        $blog = Blog::find($id);
+
+        if ($blog) {
+            $blog->delete();
+            return redirect()->route('viewBlogPage')->with('message', 'Blog Deleted successfully');
+        } else {
+            return redirect()->route('viewBlogPage')->with('error', 'Blog not found');
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
     /**
      * Display the specified resource.
      */

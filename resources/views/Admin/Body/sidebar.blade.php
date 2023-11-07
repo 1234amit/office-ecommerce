@@ -44,6 +44,16 @@
                             </a>
                         </li>
                     </ul>
+                    <ul class="nav nav-treeview"
+                        style="{{ request()->is('admin/category*') ? 'display:block; overflow:hidden;' : 'display:none; overflow:hidden;' }} ">
+                        <li class="nav-item">
+                            <a href="{{ route('viewCategoryDetails') }}"
+                                class="nav-link {{ request()->is('admin/category_view/details') ? 'active' : '' }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>View Category</p>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
 
                 <li class="nav-item {{ request()->is('admin/brand*') ? 'menu-open' : '' }}">
@@ -61,6 +71,16 @@
                                 class="nav-link {{ request()->is('admin/brand/add') ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Add Brand</p>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="nav nav-treeview"
+                        style="{{ request()->is('admin/brand*') ? 'display:block; overflow:hidden;' : 'display:none; overflow:hidden;' }} ">
+                        <li class="nav-item">
+                            <a href="{{ route('viewBrandDetails') }}"
+                                class="nav-link {{ request()->is('admin/brand/details') ? 'active' : '' }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>View Brand</p>
                             </a>
                         </li>
                     </ul>
@@ -84,6 +104,16 @@
                             </a>
                         </li>
                     </ul>
+                    <ul class="nav nav-treeview"
+                        style="{{ request()->is('admin/product*') ? 'display:block; overflow:hidden;' : 'display:none; overflow:hidden;' }}">
+                        <li class="nav-item">
+                            <a href="{{ route('viewProductPage') }}"
+                                class="nav-link {{ request()->is('admin/product/view') ? 'active' : '' }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>View Product</p>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
 
                 <li class="nav-item {{ request()->is('admin/slider*') ? 'menu-open' : '' }}">
@@ -101,6 +131,17 @@
                                 class="nav-link {{ request()->is('admin/slider/add') ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Add Slider</p>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <ul class="nav nav-treeview"
+                        style="{{ request()->is('admin/slider*') ? 'display:block; overflow:hidden;' : 'display:none; overflow:hidden;' }}">
+                        <li class="nav-item">
+                            <a href="{{ route('viewSlidePage') }}"
+                                class="nav-link {{ request()->is('admin/slider/view') ? 'active' : '' }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>View Slide</p>
                             </a>
                         </li>
                     </ul>
@@ -122,6 +163,17 @@
                                 class="nav-link {{ request()->is('admin/blog/add') ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Add Blog</p>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <ul class="nav nav-treeview"
+                        style="{{ request()->is('admin/blog*') ? 'display:block; overflow:hidden;' : 'display:none; overflow:hidden;' }}">
+                        <li class="nav-item">
+                            <a href="{{ route('viewBlogPage') }}"
+                                class="nav-link {{ request()->is('admin/blog/view') ? 'active' : '' }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>View Blog</p>
                             </a>
                         </li>
                     </ul>
